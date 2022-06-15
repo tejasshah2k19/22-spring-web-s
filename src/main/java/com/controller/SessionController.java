@@ -1,36 +1,42 @@
 package com.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.bean.UserBean;
 
 //4
 @Controller
 public class SessionController {
 
 	// signup
-	//view 
-	@RequestMapping(value="/signup",method=RequestMethod.GET)
-	public String  signup() {
+	// view
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signup() {
 		System.out.println("signup()");
-		return "Signup";//jsp
+		return "Signup";// jsp
 	}
-	//logic
-	@RequestMapping(value="/saveuser",method=RequestMethod.POST)
-	public String saveUser() {
-		return "";
+
+	// logic
+	@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
+	public String saveUser(UserBean userBean,Model model) {
+		// request.getParameter("") ;
+		// UserBean
+		System.out.println(userBean.getEmail());
+		System.out.println(userBean.getFirstName());
+		model.addAttribute("userBean",userBean);
+		return "Home";
 	}
-	
-	
-	
 
 	// register
-	//view 
-	//logic 
+	// view
+	// logic
 
 	// forgetpassword
-	//view
-	//logic 
+	// view
+	// logic
 }
 
 //session --> loing , register , forgetpassword 
