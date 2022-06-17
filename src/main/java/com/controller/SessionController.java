@@ -1,15 +1,23 @@
 package com.controller;
 
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.bean.UserBean;
+import com.dao.UserDao;
 
 //4
 @Controller
 public class SessionController {
+
+	@Autowired
+	UserDao userDao;
 
 	// signup
 	// view
@@ -21,15 +29,22 @@ public class SessionController {
 
 	// logic
 	@RequestMapping(value = "/saveuser", method = RequestMethod.POST)
-	public String saveUser(UserBean userBean,Model model) {
+	public String saveUser(UserBean userBean, Model model) {
 		// request.getParameter("") ;
 		// UserBean
 		System.out.println(userBean.getEmail());
 		System.out.println(userBean.getFirstName());
-		model.addAttribute("userBean",userBean);
+		model.addAttribute("userBean", userBean);
+		userDao.insertUser(userBean);
 		return "Home";
 	}
 
+	@GetMapping("/listUsers")
+	public String listUsers(Model model) {
+		ArrayList<UserBean> users = userDao.getAllUsers();
+		model.addAttribute("users",users);
+		return "ListUsers";
+	}
 	// register
 	// view
 	// logic

@@ -9,6 +9,8 @@
 <body>
 	FirstName : ${userBean.firstName }
 	<br> Email : ${userBean.email }
-	<br> Password : ${userBean.password }
+	<br> Password : ${userBean.password }<br>
+	
+	<a href="listUsers">List Users</a>
 </body>
 </html>
