@@ -9,32 +9,43 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-	<h2>List Users</h2>
+	<jsp:include page="../../Menu.jsp"></jsp:include>
+
+	<div class="container-fluid">
+		<h2 align="center">List Users</h2>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<table class="table table-bordered table-hover">   
+					<tr>
+						<th>UserId</th>
+						<th>FirstName</th>
+						<th>Email</th>
+						<th>Password</th>
+						<th>Action</th>
+					</tr>
+
+					<c:forEach items="${users}" var="u">
+						<tr>
+							<td>${u.userId }</td>
+							<td>${u.firstName }</td>
+							<td>${u.email }</td>
+							<td>${u.password }</td>
+							<td><a href="deleteuser?userId=${u.userId }"> Delete </a></td>   
+							
+
+						</tr>
+					</c:forEach>
+
+				</table>
+
+			</div>
+
+		</div>
+	</div>
 
 
-	<a href="signup">New USer</a>
-	<BR>
-	<br>
 
-	<table border="1">
-		<tr>
-			<th>UserId</th>
-			<th>FirstName</th>
-			<th>Email</th>
-			<th>Password</th>
-		</tr>
-
-		<c:forEach items="${users}" var="u">
-			<tr>
-				<td>${u.userId }</td>
-				<td>${u.firstName }</td>
-				<td>${u.email }</td>
-				<td>${u.password }</td>
-
-			</tr>
-		</c:forEach>
-
-	</table>
 
 </body>
 </html>
