@@ -18,8 +18,36 @@
 		<property name="prefix" value="WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
- 
 
+	<bean id="connection"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url"
+			value="jdbc:postgresql://localhost:5432/spring"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+		<property name="driverClassName"
+			value="org.postgresql.Driver"></property>
+	</bean>
 
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="connection"></property>
+	</bean>
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

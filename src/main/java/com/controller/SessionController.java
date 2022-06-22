@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,7 +46,7 @@ public class SessionController {
 	@GetMapping("/listUsers")
 	public String listUsers(Model model) {
 		ArrayList<UserBean> users = userDao.getAllUsers();
-		model.addAttribute("users",users);
+		model.addAttribute("users", users);
 		return "ListUsers";
 	}
 	// register
@@ -62,6 +63,40 @@ public class SessionController {
 		return "redirect:/listUsers";
 	}
 
+	@PostMapping("/searchdata")
+	public String searchData(@RequestParam("search") String search) {
+		//logic 
+		System.out.println(search);
+		return "ListUsers";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 //session --> loing , register , forgetpassword 

@@ -26,6 +26,43 @@ add init-param contextConfigLocation For DispatcherServlet
 
 how many sterotype annotation we have?--> 4/5 
 	 @Controller 
+---------------------------------------------------
+
+data base driver - pom.xml 
+spring data jdbc --  pom.xml 
+
+connection - DriverManagerDataSource - spring.xml 
+JdbcTemplate - spring.xml 
+
+Query 
+JdbcTemplate 
+
+connection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 	
 	
