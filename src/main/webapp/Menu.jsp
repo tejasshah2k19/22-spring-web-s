@@ -38,6 +38,12 @@
 					<div class="dropdown-divider"></div>
 					<a class="dropdown-item" href="#">Something else here</a>
 				</div></li>
+				
+				
+				<li class="nav-item"><a class="nav-link" href="newproduct"
+				tabindex="-1" aria-disabled="true">New Product</a></li>
+				
+				
 			<li class="nav-item"><a class="nav-link disabled" href="#"
 				tabindex="-1" aria-disabled="true">Disabled</a></li>
 		</ul>
