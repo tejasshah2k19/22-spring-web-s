@@ -24,7 +24,7 @@
 
 				<h2>New Product</h2>
 
-				<s:form action="saveproduct" method="post" modelAttribute="product">
+				<s:form action="saveproduct" method="post" enctype="multipart/form-data" modelAttribute="product">
 					<div class="form-group">
 
 						ProductName :
@@ -43,6 +43,11 @@
 						Qty : <s:input   path="qty" cssClass="form-control" />
 					<s:errors path="qty"></s:errors>
 					</div>
+					
+					<div class="form-group">
+						Image : <input type="file" name="productImage" />
+					</div>
+					
 					<input type="submit" value="SaveProduct" class="btn btn-primary" />
 				</s:form>
 				<a href="listproduct">List Products</a>

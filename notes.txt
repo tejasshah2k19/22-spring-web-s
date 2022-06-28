@@ -39,8 +39,15 @@ JdbcTemplate
 
 connection
 ---------------------------------------------------
+file uploading --
+1) apache commons io 
+   apache commons file upload 
+   
+2) file --> multipart/form-data  post 
 
+3) @RequestParam 
 
+4) spring.xml multipart 
 
 
 

@@ -20,7 +20,16 @@ public class ProductDao {
 				product.getQty());
 	}
 
-	public List<ProductBean> getAllProducts(){
-		return stmt.query("select * from products",new BeanPropertyRowMapper<ProductBean>(ProductBean.class));
+	public List<ProductBean> getAllProducts() {
+		return stmt.query("select * from products", new BeanPropertyRowMapper<ProductBean>(ProductBean.class));
+	}
+
+//	public void  deleteProduct() {
+//		
+//	}
+
+	public ProductBean getProductById(int productId) {
+		return stmt.queryForObject("select * from products where productid = ? ",
+				new BeanPropertyRowMapper<ProductBean>(ProductBean.class), new Object[] { productId });
 	}
 }
