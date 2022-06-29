@@ -16,12 +16,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bean.ProductBean;
 import com.dao.ProductDao;
+import com.service.FileUploadService;
 
 @Controller
 public class ProductController {
 
 	@Autowired
 	ProductDao productDao;
+
+	@Autowired
+	FileUploadService fileUploadService;
 
 	@GetMapping("/newproduct")
 	public String newProduct(Model model) {
@@ -30,9 +34,9 @@ public class ProductController {
 	}
 
 	@PostMapping("/saveproduct")
-	public String saveProduct(@RequestParam("productImage") MultipartFile file,@ModelAttribute("product") @Valid ProductBean productBean, BindingResult result,
-			 Model model) {
-
+	public String saveProduct(@RequestParam("productImage") MultipartFile file,
+			@ModelAttribute("product") @Valid ProductBean productBean, BindingResult result, Model model) {
+		System.out.println(file);
 		System.out.println(file.getOriginalFilename());
 		System.out.println(file.getSize());
 
@@ -40,6 +44,9 @@ public class ProductController {
 			model.addAttribute("product", productBean);
 			return "NewProduct";
 		} else {
+
+			fileUploadService.uploadImage(file,
+					"D:\\Tejas Shah\\Dropbox\\Tejas Shah's Workplace\\work\\spring-web-club-s\\src\\main\\resources\\images\\");
 			productDao.insertProduct(productBean);
 			return "redirect:/listproduct";
 		}
