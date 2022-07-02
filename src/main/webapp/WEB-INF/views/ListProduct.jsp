@@ -34,8 +34,8 @@
 							<td>${p.price}</td>
 							<td>${p.qty }</td>
 							<td>${p.imgurl}</td>
-							<td> <img src="${p.imgurl}" /></td>
-							<td><a href="deleteproduct?productId=${p.productId }"> Delete </a></td>   
+							<td> <img height="100px" width="100px" src="${p.imgurl}" /></td>
+							<td><a  href="deleteproduct?productId=${p.productId }"> Delete </a></td>   
 							
 
 						</tr>

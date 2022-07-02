@@ -44,10 +44,11 @@ public class ProductController {
 			model.addAttribute("product", productBean);
 			return "NewProduct";
 		} else {
-
+			System.out.println("----------------");
 			String imgurl = fileUploadService.uploadImage(file,
 					"D:\\Tejas Shah\\Dropbox\\Tejas Shah's Workplace\\work\\spring-web-club-s\\src\\main\\webapp\\resources\\images\\");
 		
+			System.out.println(imgurl);
 			productBean.setImgurl(imgurl);
 			productDao.insertProduct(productBean);
 			return "redirect:/listproduct";

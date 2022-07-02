@@ -28,6 +28,6 @@ public class FileUploadService {
 			e.printStackTrace();
 		}
 
-		return "/images/"+file.getOriginalFilename();
+		return "resources/images/"+file.getOriginalFilename();
 	}
 }
