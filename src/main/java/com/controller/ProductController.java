@@ -46,7 +46,7 @@ public class ProductController {
 		} else {
 
 			String imgurl = fileUploadService.uploadImage(file,
-					"D:\\Tejas Shah\\Dropbox\\Tejas Shah's Workplace\\work\\spring-web-club-s\\src\\main\\resources\\images\\");
+					"D:\\Tejas Shah\\Dropbox\\Tejas Shah's Workplace\\work\\spring-web-club-s\\src\\main\\webapp\\resources\\images\\");
 		
 			productBean.setImgurl(imgurl);
 			productDao.insertProduct(productBean);
