@@ -22,6 +22,8 @@
 						<th>Name</th>
 						<th>Price</th>
 						<th>Qty</th>
+						<th>ImgPath</th>
+						<th>Img</th>
 						<th>Action</th>
 					</tr>
 
@@ -31,6 +33,8 @@
 							<td>${p.name }</td>
 							<td>${p.price}</td>
 							<td>${p.qty }</td>
+							<td>${p.imgurl}</td>
+							<td> <img src="${p.imgurl}" /></td>
 							<td><a href="deleteproduct?productId=${p.productId }"> Delete </a></td>   
 							
 

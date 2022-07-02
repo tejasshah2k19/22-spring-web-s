@@ -16,8 +16,8 @@ public class ProductDao {
 	JdbcTemplate stmt;
 
 	public void insertProduct(ProductBean product) {
-		stmt.update("insert into products (name,price,qty) values (?,?,?) ", product.getName(), product.getPrice(),
-				product.getQty());
+		stmt.update("insert into products (name,price,qty,imgurl) values (?,?,?,?) ", product.getName(),
+				product.getPrice(), product.getQty(), product.getImgurl());
 	}
 
 	public List<ProductBean> getAllProducts() {

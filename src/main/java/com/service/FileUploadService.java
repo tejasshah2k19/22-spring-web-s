@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileUploadService {
 
-	public void uploadImage(MultipartFile file, String path) {
+	public String uploadImage(MultipartFile file, String path) {
 
 		try {
 			File imgFile = new File(path, file.getOriginalFilename());
@@ -28,5 +28,6 @@ public class FileUploadService {
 			e.printStackTrace();
 		}
 
+		return "/images/"+file.getOriginalFilename();
 	}
 }

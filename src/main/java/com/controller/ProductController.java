@@ -45,8 +45,10 @@ public class ProductController {
 			return "NewProduct";
 		} else {
 
-			fileUploadService.uploadImage(file,
+			String imgurl = fileUploadService.uploadImage(file,
 					"D:\\Tejas Shah\\Dropbox\\Tejas Shah's Workplace\\work\\spring-web-club-s\\src\\main\\resources\\images\\");
+		
+			productBean.setImgurl(imgurl);
 			productDao.insertProduct(productBean);
 			return "redirect:/listproduct";
 		}

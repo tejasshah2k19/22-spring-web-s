@@ -7,6 +7,8 @@ import javax.validation.constraints.NotNull;
 public class ProductBean {
 	int productId;
 
+	String imgurl;
+	
 	@NotBlank(message = "Please Enter Product Name")
 	String name;
 
@@ -48,6 +50,14 @@ public class ProductBean {
 
 	public void setQty(int qty) {
 		this.qty = qty;
+	}
+
+	public String getImgurl() {
+		return imgurl;
+	}
+
+	public void setImgurl(String imgurl) {
+		this.imgurl = imgurl;
 	}
 
 }
